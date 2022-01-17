@@ -82,7 +82,7 @@ void changepassword(){
   UART_ConfigurePins();
   UART_ConfigureUart(9600);
 
-    printInsertNewPassword();
+    insertNewPassword();
     getU4_string();
   if(pwd==strg){
         samePassword();

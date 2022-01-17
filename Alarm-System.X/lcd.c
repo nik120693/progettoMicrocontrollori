@@ -275,7 +275,7 @@ void printInsertPassword() {
     printToLCD(name, 0); //1 for first line    
 }
 
-void printInsertNewPassword() {
+void insertNewPassword() {
     char name[26] = "Inserisci nuova Password: ";
     clearLCD();
     printToLCD(name, 0);

@@ -5,109 +5,109 @@ c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(strlen.o)
                               build/default/production/lcd.o (strlen)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (_bootstrap_exception_handler)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (_on_reset)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (_on_reset)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (_on_bootstrap)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (_on_bootstrap)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (_nmi_handler)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (_nmi_handler)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (__pic32_data_init)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (__pic32_data_init)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                              C:\Users\frani\AppData\Local\Temp\cce931BI.o (_general_exception_context)
+                              C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o (_general_exception_context)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector0.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_0)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_0)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector1.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_1)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_1)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector2.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_2)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_2)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector3.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_3)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_3)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector4.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_4)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_4)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector5.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_5)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_5)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector6.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_6)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_6)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector7.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_7)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_7)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector8.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_8)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_8)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector9.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_9)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_9)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector10.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_10)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_10)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector11.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_11)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_11)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector12.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_12)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_12)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector13.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_13)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_13)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector14.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_14)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_14)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector15.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_15)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_15)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector16.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_16)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_16)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector17.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_17)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_17)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector18.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_18)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_18)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector19.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_19)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_19)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector20.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_20)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_20)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector21.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_21)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_21)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector22.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_22)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_22)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector23.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_23)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_23)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector24.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_24)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_24)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector25.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_25)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_25)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector26.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_26)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_26)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector27.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_27)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_27)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector28.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_28)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_28)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector29.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_29)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_29)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector30.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_30)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_30)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector31.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_31)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_31)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector32.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_32)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_32)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector33.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_33)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_33)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector34.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_34)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_34)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector35.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_35)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_35)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector36.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_36)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_36)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector37.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_37)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_37)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector38.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_38)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_38)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector39.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_39)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_39)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector40.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_40)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_40)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector41.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_41)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_41)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector42.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_42)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_42)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector43.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_43)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_43)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector44.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_44)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_44)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(vector45.o)
-                              C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o (__vector_dispatch_45)
+                              C:\Users\frani\AppData\Local\Temp\ccLySa3M.o (__vector_dispatch_45)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
                               c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(general-exception.o) (_general_exception_handler)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
@@ -269,16 +269,16 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/default/production/btn.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 build/default/production/btn.o
- .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\cce931BI.o
- .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
+                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
- .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
- .discard       0x0000000000000000       0xb8 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+                0x0000000000000000       0x18 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
+ .discard       0x0000000000000000       0xb8 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
  .reginfo       0x0000000000000000       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
@@ -723,9 +723,9 @@ LOAD build/default/production/lcd.o
 LOAD build/default/production/ADC.o
 LOAD build/default/production/btn.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
-LOAD C:\Users\frani\AppData\Local\Temp\cce931BI.o
-LOAD C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
-LOAD C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+LOAD C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
+LOAD C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
+LOAD C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
 LOAD c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
 LOAD c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc.a
 START GROUP
@@ -780,16 +780,16 @@ END GROUP
 
 .reset          0x00000000bfc00000      0x19c
  *(.reset)
- .reset         0x00000000bfc00000        0x8 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .reset         0x00000000bfc00000        0x8 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
                 0x00000000bfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0x00000000bfc00008      0x194 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+                0x00000000bfc00008      0x194 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
                 0x00000000bfc00008                _startup
 
 .bev_excpt      0x00000000bfc00380       0x10
  *(.bev_handler)
- .bev_handler   0x00000000bfc00380       0x10 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .bev_handler   0x00000000bfc00380       0x10 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
 
 .dbg_excpt      0x00000000bfc00480        0x0
                 0x00000000bfc00480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
@@ -799,7 +799,7 @@ END GROUP
 
 .app_excpt      0x000000009fc01180       0x10
  *(.gen_handler)
- .gen_handler   0x000000009fc01180       0x10 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .gen_handler   0x000000009fc01180       0x10 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
 
 .vector_0       0x000000009fc01200        0x8
  *(.vector_0)
@@ -1502,20 +1502,20 @@ END GROUP
  .debug_frame   0x0000000000000604       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
  .debug_frame   0x0000000000000630       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_str      0x0000000000000000    0x2600b
+.debug_str      0x0000000000000000    0x26001
  *.elf(.debug_str)
  *(.debug_str)
- .debug_str     0x0000000000000000     0x7579 build/default/production/main.o
- .debug_str     0x0000000000007579     0x754a build/default/production/uart.o
- .debug_str     0x000000000000eac3     0x7605 build/default/production/lcd.o
- .debug_str     0x00000000000160c8     0x74f2 build/default/production/ADC.o
- .debug_str     0x000000000001d5ba     0x750a build/default/production/btn.o
- .debug_str     0x0000000000024ac4      0x31c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc.a(floatunsisf.o)
- .debug_str     0x0000000000024de0      0x3b3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_str     0x0000000000025193      0x38d c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_str     0x0000000000025520      0x395 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_str     0x00000000000258b5      0x3af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
- .debug_str     0x0000000000025c64      0x3a7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_str     0x0000000000000000     0x7574 build/default/production/main.o
+ .debug_str     0x0000000000007574     0x754a build/default/production/uart.o
+ .debug_str     0x000000000000eabe     0x7600 build/default/production/lcd.o
+ .debug_str     0x00000000000160be     0x74f2 build/default/production/ADC.o
+ .debug_str     0x000000000001d5b0     0x750a build/default/production/btn.o
+ .debug_str     0x0000000000024aba      0x31c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1\libgcc.a(floatunsisf.o)
+ .debug_str     0x0000000000024dd6      0x3b3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x0000000000025189      0x38d c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_str     0x0000000000025516      0x395 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x00000000000258ab      0x3af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-general-exception-handler.o)
+ .debug_str     0x0000000000025c5a      0x3a7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .debug_loc      0x0000000000000000       0xdc
  *.elf(.debug_loc)
@@ -1574,11 +1574,11 @@ END GROUP
  .gnu.attributes
                 0x0000000000000050       0x10 build/default/production/btn.o
  .gnu.attributes
-                0x0000000000000060       0x10 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+                0x0000000000000060       0x10 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
  .gnu.attributes
-                0x0000000000000070       0x10 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
+                0x0000000000000070       0x10 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
  .gnu.attributes
-                0x0000000000000080       0x10 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+                0x0000000000000080       0x10 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
  .gnu.attributes
                 0x0000000000000090       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
  .gnu.attributes
@@ -2100,22 +2100,22 @@ LOAD data_init
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\pic32_software_reset.o
 
 .bss%z127       0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+ .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
 
 .data%z128      0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+ .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
 
 .bss%z129       0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
+ .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
 
 .data%z130      0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
+ .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
 
 .bss%z131       0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .bss           0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
 
 .data%z132      0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .data          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
 
 .bss%z133       0x0000000000000000        0x0
  .bss           0x0000000000000000        0x0 build/default/production/btn.o
@@ -2161,7 +2161,7 @@ LOAD data_init
                 0x000000009d000e44                sw4
                 0x000000009d00107c                sw5
                 0x000000009d0010e4                printInsertPassword
-                0x000000009d001164                printInsertNewPassword
+                0x000000009d001164                insertNewPassword
                 0x000000009d001200                samePassword
                 0x000000009d0012a8                printConfirmNewPassword
                 0x000000009d001344                passwordUpdated
@@ -2260,7 +2260,7 @@ LOAD data_init
 .text.main_entry
                 0x000000009d003730       0x54
  .text.main_entry
-                0x000000009d003730       0x54 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+                0x000000009d003730       0x54 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
                 0x000000009d003764                __crt0_exit
 
 .text           0x000000009d003784       0x48
@@ -2490,13 +2490,13 @@ LOAD data_init
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
 
 .text%z201      0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqrc1OA.o
+ .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccLySa3M.o
 
 .text%z202      0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccqp9hVX.o
+ .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccn2CMPq.o
 
 .text%z203      0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\cce931BI.o
+ .text          0x0000000000000000        0x0 C:\Users\frani\AppData\Local\Temp\ccAg64Uh.o
 
 .text%z204      0x0000000000000000        0x0
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib\debug-exception-return.o
