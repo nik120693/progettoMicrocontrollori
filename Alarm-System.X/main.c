@@ -36,6 +36,7 @@
 char flagRX; // global  - it has to be init in main.c
 char strg[80]; // global - it has to be init in main.c
 int j;
+char pwd[] = {0,0,0,0};
 
 int initializeRGBToRed();
 unsigned int initializedRGB = 0;
