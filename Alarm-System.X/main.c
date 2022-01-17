@@ -57,6 +57,7 @@ TRISFbits.TRISF4 = 1; //RF0 (BTNC) configured as input
 tris_ADC_AN2 = 1;
 ansel_ADC_AN2 = 1;
 BTN_Init();
+BTN_ConfigurePins();
 
 setupLCD();
 
@@ -65,8 +66,13 @@ setupLCD();
         if(initializedRGB == 0)
             initializedRGB = initializeRGBToRed();
         
-        if(PORTFbits.RF0)
+        if(PORTFbits.RF0){
             printInsertPassword();
+            getU4_string();
+                for(int i=0;i<sizeof(strg)/sizeof(strg[0]);i++){
+                     pwd[i]=strg[i];
+                 }
+        }
     }
 }
 

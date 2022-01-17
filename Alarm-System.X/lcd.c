@@ -273,6 +273,10 @@ void printInsertPassword() {
     char name[15] = "Inserisci Pass:";
     clearLCD();
     printToLCD(name, 0); //1 for first line    
+    char secline[6] = "digita";
+    printToLCD(secline, 1);
+    putU4_string("Inserisci Password: \n");
+    
 }
 
 void insertNewPassword() {
