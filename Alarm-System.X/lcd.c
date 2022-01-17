@@ -281,8 +281,20 @@ void printInsertNewPassword() {
     printToLCD(name, 0);
 }
 
+void samePassword() {
+    char name[32] = "Password uguale alla precedente ";
+    clearLCD();
+    printToLCD(name, 0);
+}
+
 void printConfirmNewPassword() {
     char name[25] = "Conferma nuova Password: ";
+    clearLCD();
+    printToLCD(name, 0);
+}
+
+void passwordUpdated() {
+    char name[30] = "Password cambiata con successo";
     clearLCD();
     printToLCD(name, 0);
 }

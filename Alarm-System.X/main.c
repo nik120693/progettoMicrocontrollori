@@ -14,6 +14,7 @@
 #include "lcd.h"
 #include "ADC.h"
 #include "config.h"
+#include "btn.h"
 /* Pragma definition */
 //for system clock and for pbclk
 #pragma config JTAGEN = OFF     
@@ -55,6 +56,7 @@ TRISFbits.TRISF4 = 1; //RF0 (BTNC) configured as input
 
 tris_ADC_AN2 = 1;
 ansel_ADC_AN2 = 1;
+BTN_Init();
 
 setupLCD();
 
@@ -74,6 +76,23 @@ int initializeRGBToRed(){
     LATDbits.LATD2 = 1;
     
     return 1;
+}
+
+void changepassword(){
+  UART_ConfigurePins();
+  UART_ConfigureUart(9600);
+
+    printInsertNewPassword();
+    getU4_string();
+  if(pwd==strg){
+        samePassword();
+  }
+  else{
+      for(int i=0;i<sizeof(strg)/sizeof(strg[0]);i++){
+          pwd[i]=strg[i];
+      }
+      passwordUpdated();
+  }
 }
 
 void attivato(){

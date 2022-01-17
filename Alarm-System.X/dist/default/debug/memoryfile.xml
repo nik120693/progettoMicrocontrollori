@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/Alarm-System.X.production.elf">                 
+  <executable name="dist/default/debug/Alarm-System.X.debug.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
       <length>531968</length>                 
-      <used>15524</used>                     
-      <free>516444</free>                     
+      <used>15536</used>                     
+      <free>516432</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 
-      <length>131072</length>                 
-      <used>124</used>                     
-      <free>130948</free>                     
+      <length>131584</length>                 
+      <used>1148</used>                     
+      <free>130436</free>                     
     </memory>                              
   </executable>                            
 </project>                                 
