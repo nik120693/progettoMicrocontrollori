@@ -12,6 +12,8 @@
 /* include user header file here*/
 #include "uart.h"
 #include "lcd.h"
+#include "ADC.h"
+#include "config.h"
 /* Pragma definition */
 //for system clock and for pbclk
 #pragma config JTAGEN = OFF     
@@ -50,6 +52,9 @@ ANSELBbits.ANSB14 = 0; //buzzer disabled analog
 PORTBbits.RB14 = 0;
 TRISFbits.TRISF4 = 1; //RF0 (BTNC) configured as input
 
+tris_ADC_AN2 = 1;
+ansel_ADC_AN2 = 1;
+
 setupLCD();
 
     while(1) //forever loop
@@ -69,4 +74,18 @@ int initializeRGBToRed(){
     
     return 1;
 }
+
+void attivato(){
+    initializeRGBToRed();
+    while(1) {
+        ADC_Init();
+        LATBbits.LATB14 ^= 1; //attiva suono
+        //delay
+        LATBbits.LATB14 ^= 0; //disattiva suono
+        //aggiungi ai logs
+    }
+    //se btnc premuto -> btn init , se la pwd == input -> menu
+}
+
+
 

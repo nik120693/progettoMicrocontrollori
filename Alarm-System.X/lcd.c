@@ -275,6 +275,20 @@ void printInsertPassword() {
     printToLCD(name, 0); //1 for first line    
 }
 
+void printInsertNewPassword() {
+    char name[26] = "Inserisci nuova Password: ";
+    clearLCD();
+    printToLCD(name, 0);
+}
+
+void printConfirmNewPassword() {
+    char name[25] = "Conferma nuova Password: ";
+    clearLCD();
+    printToLCD(name, 0);
+}
+
+
+
 void sw6() { //sound
     LATBbits.LATB14 ^= 1; //XOR 
 }
