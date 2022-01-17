@@ -1,5 +1,7 @@
 #include "lcd.h"
 #include <string.h>
+#include "uart.h"
+#include "config.h"
 #define SECOND_ROW 0x40
 int boolean[3] = {0, 0, 0};
 int lastSw4 = 0;
@@ -270,12 +272,13 @@ void sw5() {
 }
 
 void printInsertPassword() {
-    char name[15] = "Inserisci Pass:";
+    char name[15] = "Inserisci Pass";
     clearLCD();
     printToLCD(name, 0); //1 for first line    
-    char secline[6] = "digita";
-    printToLCD(secline, 1);
-    putU4_string("Inserisci Password: \n");
+    char secline[7] = {'d','i','g','i','t','a','\0'};
+    clearLCD();
+    printToLCD(secline, 0);
+    UART_PutString("Inserisci Password:\0");
     
 }
 
@@ -285,7 +288,7 @@ void insertNewPassword() {
     printToLCD(name, 0);
 }
 
-void samePassword() {
+void checkPassword() {
     char name[32] = "Password uguale alla precedente ";
     clearLCD();
     printToLCD(name, 0);

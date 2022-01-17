@@ -37,7 +37,7 @@
 char flagRX; // global  - it has to be init in main.c
 char strg[80]; // global - it has to be init in main.c
 int j;
-char pwd[] = {0,0,0,0};
+char pwd[] = {'0','0','0','0'};
 
 int initializeRGBToRed();
 unsigned int initializedRGB = 0;
@@ -53,7 +53,8 @@ TRISBbits.TRISB14 = 0; //buzzer configured as output
 ANSELBbits.ANSB14 = 0; //buzzer disabled analog
 PORTBbits.RB14 = 0;
 TRISFbits.TRISF4 = 1; //RF0 (BTNC) configured as input
-
+UART_ConfigurePins();
+UART_ConfigureUart(9600);
 tris_ADC_AN2 = 1;
 ansel_ADC_AN2 = 1;
 BTN_Init();
@@ -66,13 +67,20 @@ setupLCD();
         if(initializedRGB == 0)
             initializedRGB = initializeRGBToRed();
         
+        /*
+         inserisco la password
+         */
         if(PORTFbits.RF0){
             printInsertPassword();
-            getU4_string();
+            UART_GetStringPoll(strg);
                 for(int i=0;i<sizeof(strg)/sizeof(strg[0]);i++){
                      pwd[i]=strg[i];
                  }
+        if(pwd==strg){
+            checkPassword();
         }
+        }
+
     }
 }
 
@@ -82,23 +90,6 @@ int initializeRGBToRed(){
     LATDbits.LATD2 = 1;
     
     return 1;
-}
-
-void changepassword(){
-  UART_ConfigurePins();
-  UART_ConfigureUart(9600);
-
-    insertNewPassword();
-    getU4_string();
-  if(pwd==strg){
-        samePassword();
-  }
-  else{
-      for(int i=0;i<sizeof(strg)/sizeof(strg[0]);i++){
-          pwd[i]=strg[i];
-      }
-      passwordUpdated();
-  }
 }
 
 void attivato(){

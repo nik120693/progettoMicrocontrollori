@@ -1,3 +1,7 @@
-build/default/production/lcd.o: lcd.c lcd.h
+build/default/production/lcd.o: lcd.c lcd.h uart.h config.h
 
 lcd.h:
+
+uart.h:
+
+config.h:
