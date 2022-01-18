@@ -1,459 +1,520 @@
-#include "lcd.h"
+/* ************************************************************************** */
+/** Descriptive File Name
+
+  @Company
+    Digilent
+
+  @File Name
+    lcd.c
+
+  @Description
+        This file groups the functions that implement the LCD library.
+        The library implements control of the LCD device. 
+        It is accessed in a "parallel like" approach. 
+        Library provides functions for simple commands, displaying characters, handling user characters.
+        Include the file together with config.h, utils.c and utils.h in the project when this library is needed.	
+ 
+  @Author
+    Cristian Fatu 
+    cristian.fatu@digilent.ro
+*/
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* Section: Included Files                                                    */
+/* ************************************************************************** */
+#include <xc.h>
+#include <sys/attribs.h>
 #include <string.h>
-#include "uart.h"
 #include "config.h"
-#define SECOND_ROW 0x40
-int boolean[3] = {0, 0, 0};
-int lastSw4 = 0;
-int lastSw6 = 0;
-int shiftCounter = 0;
-int shiftCounterStatus = 0; //0 right shift, 1 left shift
+#include "lcd.h"
+/* ************************************************************************** */
 
-int sw2(int fan) {
-    //LCD
-    boolean[0] = 0;
-    boolean[1] = 0;
-    char mode[8] = {'M', 'o', 'd', 'e', ' ', '2', ':', '\0'};
-    //LCD
-
-    //switches
-    if (PORTDbits.RD15) { //do reverse function (SW3)
-        //LCD
-        if (boolean[2] != 2 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[16] = "Swing Down Fast";
-                writeMode(mode, name, 2, 2);
-            } else {
-                char name[16] = "Swing Down Slow";
-                writeMode(mode, name, 2, 2);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for shift left/ right
-            if (PORTDbits.RD14) {
-                char name[16] = "Swing Down Fast";
-                shiftLCD(name);
-            } else {
-                char name[16] = "Swing Down Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        switch (fan) {
-            case(0x18):
-                PORTA = 0X81;
-                return 0x81;
-            case(0x24):
-                PORTA = 0X18;
-                return 0x18;
-            case(0x42):
-                PORTA = 0X24;
-                return 0x24;
-            case(0x81):
-                PORTA = 0X42;
-                return 0x42;
-        }
-    } else {
-        //LCD
-        if (boolean[2] != 1 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[14] = "Swing Up Fast";
-                writeMode(mode, name, 2, 1);
-            } else {
-                char name[14] = "Swing Up Slow";
-                writeMode(mode, name, 2, 1);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for shift left/ right
-            if (PORTDbits.RD14) {
-                char name[14] = "Swing Up Fast";
-                shiftLCD(name);
-            } else {
-                char name[14] = "Swing Up Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        switch (fan) {
-            case(0x18):
-                PORTA = 0X24;
-                return 0x24;
-            case(0x24):
-                PORTA = 0X42;
-                return 0x42;
-            case(0x42):
-                PORTA = 0X81;
-                return 0x81;
-            case(0x81):
-                PORTA = 0X18;
-                return 0x18;
-        }
-    }
-    //switches
-
+/* ------------------------------------------------------------ */
+/***	LCD_Init
+**
+**	Parameters:
+**		
+**
+**	Return Value:
+**		
+**
+**	Description:
+**		This function initializes the hardware used in the LCD module: 
+**      The following digital pins are configured as digital outputs: LCD_DISP_RS, LCD_DISP_RW, LCD_DISP_EN
+**      The following digital pins are configured as digital inputs: LCD_DISP_RS.
+**      The LCD initialization sequence is performed, the LCD is turned on.
+**          
+*/
+void LCD_Init()
+{
+    LCD_ConfigurePins();
+    LCD_InitSequence(displaySetOptionDisplayOn);
 }
 
-int sw1(int shiftL) {
-    //LCD
-    boolean[0] = 0; //disable boolean for sw0
-    boolean[2] = 0;
-    char mode[8] = {'M', 'o', 'd', 'e', ' ', '1', ':', '\0'};
-    //LCD
-
-    //switch
-    if (PORTDbits.RD15) { //do reverse function (SW3)
-        //LCD
-        if (boolean[1] != 2 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[17] = "Shift Right Fast";
-                writeMode(mode, name, 1, 2);
-
-            } else {
-                char name[17] = "Shift Right Slow";
-                writeMode(mode, name, 1, 2);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for shift left/ right
-            if (PORTDbits.RD14) {
-                char name[17] = "Shift Right Fast";
-                shiftLCD(name);
-
-            } else {
-                char name[17] = "Shift Right Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        shiftL = shiftL / 2;
-        if (shiftL < 1) {
-            shiftL = 128;
-        }
-    } else { // do normal function
-        //LCD
-        if (boolean[1] != 1 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[16] = "Shift Left Fast";
-                writeMode(mode, name, 1, 1);
-
-            } else {
-                char name[16] = "Shift Left Slow";
-                writeMode(mode, name, 1, 1);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for ShiftLCD
-            if (PORTDbits.RD14) {
-                char name[16] = "Shift Left Fast";
-                shiftLCD(name);
-
-            } else {
-                char name[16] = "Shift Left Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        if (shiftL == 0) //first runtime
-            shiftL = 1;
-        else {
-            shiftL = shiftL * 2;
-            if (shiftL > 128)
-                shiftL = 1;
-        }
-    }
-    PORTA = shiftL; //shiftL is being used as ShifttR currently 
-    return shiftL;
-    //switch
-}
-
-int sw0(int counter) {
-    //LCD
-    boolean[1] = 0; //disable boolean for sw0
-    boolean[2] = 0;
-    char mode[8] = {'M', 'o', 'd', 'e', ' ', '0', ':', '\0'};
-    //LCD
-
-    //switch
-    if (PORTDbits.RD15) { //do reverse function (SW3)
-        //LCD
-        if (boolean[0] != 2 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[17] = "Counter Down Fast";
-                writeMode(mode, name, 0, 2);
-            } else {
-                char name[17] = "Counter Down Slow";
-                writeMode(mode, name, 0, 2);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for ShiftLCD
-            if (PORTDbits.RD14) {
-                char name[17] = "Counter Down Fast";
-                shiftLCD(name);
-            } else {
-                char name[17] = "Counter Down Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        counter--;
-    } else {
-        //LCD
-        if (boolean[0] != 1 || lastSw4 != PORTDbits.RD14) {
-            resetShifts();
-            if (PORTDbits.RD14) {
-                char name[16] = "Counter Up Fast";
-                writeMode(mode, name, 0, 1);
-            } else {
-                char name[16] = "Counter Up Slow";
-                writeMode(mode, name, 0, 1);
-            }
-            lastSw4 = PORTDbits.RD14;
-        } else { // for ShiftLCD
-            if (PORTDbits.RD14) {
-                char name[16] = "Counter Up Fast";
-                shiftLCD(name);
-            } else {
-                char name[16] = "Counter Up Slow";
-                shiftLCD(name);
-            }
-        }
-        //LCD
-        counter++;
-    }
-    PORTA = counter;
-    return counter;
-    //switch
-}
-
-void sw4() { // decide Loop speed
-    int j, temp = 120000;
-    if (PORTDbits.RD14 != lastSw4) {
-        lastSw4 = PORTDbits.RD14;
-    }
-
-    if (PORTDbits.RD14) { //SW4 ON?
-        temp = 0;
-    }
-    if (PORTBbits.RB10) { // SW 6 ON? (buzzer)
-        for (j = 0; j <= 150000 + temp; j++) {
-            if (j % 440 == 0)
-                sw6();
-        }
-        // buzzer LCD and ShiftLCD
-        char name[10] = "Beep Mode";
-        if (lastSw6 != PORTBbits.RB10) { 
-            resetShifts();
-            char mode[8] = {'M', 'o', 'd', 'e', ' ', '6', ':', '\0'};
-            clearLCD();
-            printToLCD(mode, 0); //0 for first line
-            printToLCD(name, 1); //0 for first line
-            lastSw6 = PORTBbits.RB10;
-        } else {
-            shiftLCD(name);
-        }
-        // buzzer LCD and ShiftLCD
-    } else {
-        lastSw6 = PORTBbits.RB10; // PORTBbits.RB10 == 0 
-        for (j = 0; j <= 150000 + temp; j++);
-    }
-
-}
-
-void sw5() {
-    char mode[8] = {'M', 'o', 'd', 'e', ' ', '5', ':', '\0'};
-    //char name[5] = "Inserisci Password";
-    clearLCD();
-    printToLCD(mode, 0); //0 for first line
-    //printToLCD(name, 1); //1 for second line
-    resetShifts();
-
-}
-
-void printInsertPassword() {
-    char name[15] = "Inserisci Pass";
-    clearLCD();
-    printToLCD(name, 0); //1 for first line    
-    char secline[7] = {'d','i','g','i','t','a','\0'};
-    clearLCD();
-    printToLCD(secline, 0);
-    UART_PutString("Inserisci Password:\0");
+/* ------------------------------------------------------------ */
+/***	LCD_ConfigurePins
+**
+**	Parameters:
+**		
+**
+**	Return Value:
+**		
+**
+**	Description:
+**		This function configures the digital pins involved in the LCD module: 
+**      The following digital pins are configured as digital outputs: LCD_DISP_RS, LCD_DISP_RW, LCD_DISP_EN
+**      The following digital pins are configured as digital inputs: LCD_DISP_RS.
+**      The function uses pin related definitions from config.h file.
+**      This is a low-level function called by LCD_Init(), so user should avoid calling it directly.
+**      
+**          
+*/
+void LCD_ConfigurePins()
+{
+    // set control pins as digital outputs.
+    tris_LCD_DISP_RS = 0;
+    tris_LCD_DISP_RW = 0;
+    tris_LCD_DISP_EN = 0;
     
+    // disable analog (set pins as digital))
+    ansel_LCD_DISP_RS = 0;
+    
+    // default (IO) function for remapable pins
+    rp_LCD_DISP_RS = 0;
+    rp_LCD_DISP_RW = 0;
+    rp_LCD_DISP_EN = 0;
+    
+    // make data pins digital (disable analog)
+    ansel_LCD_DB2 = 0;
+    ansel_LCD_DB4 = 0;
+    ansel_LCD_DB5 = 0;
+    ansel_LCD_DB6 = 0;
+    ansel_LCD_DB7 = 0;
 }
 
-void insertNewPassword() {
-    char name[26] = "Inserisci nuova Password: ";
-    clearLCD();
-    printToLCD(name, 0);
+/* ------------------------------------------------------------ */
+/***	LCD_WriteByte
+**
+**	Parameters:
+**		unsigned char bData - the data to be written to LCD, over the parallel interface
+**
+**	Return Value:
+**		
+**
+**	Description:
+**		This function writes a byte to the LCD. 
+**      It implements the parallel write using LCD_DISP_RS, LCD_DISP_RW, LCD_DISP_EN, 
+**      LCD_DISP_RS pins, and data pins. 
+**      For a better performance, the data pins are accessed using a pointer to 
+**      the register byte where they are allocated.
+**      This is a low-level function called by LCD write functions, so user should avoid calling it directly.
+**      The function uses pin related definitions from config.h file.
+**      
+**          
+*/
+void LCD_WriteByte(unsigned char bData)
+{
+    DelayAprox10Us(5);  
+	// Configure IO Port data pins as output.
+   tris_LCD_DATA &= ~msk_LCD_DATA;
+    DelayAprox10Us(5);  
+	// clear RW
+	lat_LCD_DISP_RW = 0;
+
+    // access data as contiguous 8 bits, using pointer to the LSB byte of LATE register
+    unsigned char *pLCDData = (unsigned char *)(0xBF886430);
+    *pLCDData = bData;
+
+    DelayAprox10Us(10);   
+
+	// Set En
+	lat_LCD_DISP_EN = 1;    
+
+    DelayAprox10Us(5);
+	// Clear En
+	lat_LCD_DISP_EN = 0;
+
+    DelayAprox10Us(5);
+	// Set RW
+	lat_LCD_DISP_RW = 1;
 }
 
-void checkPassword() {
-    char name[32] = "Password uguale alla precedente ";
-    clearLCD();
-    printToLCD(name, 0);
+/* ------------------------------------------------------------ */
+/***	LCD_ReadByte
+**
+**	Parameters:
+**		
+**
+**	Return Value:
+**		unsigned char - the data read from LCD, over the parallel interface
+**
+**	Description:
+**		This function reads a byte from the LCD. 
+**      It implements the parallel read using LCD_DISP_RS, LCD_DISP_RW, LCD_DISP_EN, 
+**      LCD_DISP_RS pins, and data pins. 
+**      This is a low-level function called by LCD_ReadStatus function, so user should avoid calling it directly.
+**      The function uses pin related definitions from config.h file.
+**      
+**          
+*/
+unsigned char LCD_ReadByte()
+{
+    unsigned char bData;
+	// Configure IO Port data pins as input.
+    tris_LCD_DATA |= msk_LCD_DATA;
+	// Set RW
+	lat_LCD_DISP_RW = 1;
+
+	// set RW
+	lat_LCD_DISP_RW = 1;    
+    
+	// Set En
+	lat_LCD_DISP_EN = 1;
+
+    DelayAprox10Us(50);   
+
+    // Clear En
+	lat_LCD_DISP_EN = 0;
+  	bData = (unsigned char)(prt_LCD_DATA & (unsigned int)msk_LCD_DATA);
+	return bData;
 }
 
-void printConfirmNewPassword() {
-    char name[25] = "Conferma nuova Password: ";
-    clearLCD();
-    printToLCD(name, 0);
+/* ------------------------------------------------------------ */
+/***	LCD_ReadStatus
+**
+**	Parameters:
+**		
+**
+**	Return Value:
+**		unsigned char - the status byte that was read.
+**
+**	Description:
+**		Reads the status of the LCD.  
+**      It clears the RS and calls LCD_ReadByte() function. 
+**      The function uses pin related definitions from config.h file.
+**          
+*/
+unsigned char LCD_ReadStatus()
+{
+	// Clear RS
+	lat_LCD_DISP_RS = 0;
+    
+	unsigned char bStatus = LCD_ReadByte();
+	return bStatus;
 }
 
-void passwordUpdated() {
-    char name[30] = "Password cambiata con successo";
-    clearLCD();
-    printToLCD(name, 0);
+/* ------------------------------------------------------------ */
+/***	LCD_WriteCommand
+**
+**	Parameters:
+**		unsigned char bCmd -  the command code byte to be written to LCD
+**
+**	Return Value:
+**		
+**
+**	Description:
+**		Writes the specified byte as command. 
+**      It clears the RS and writes the byte to LCD. 
+**      The function uses pin related definitions from config.h file.
+**      
+**          
+*/
+void LCD_WriteCommand(unsigned char bCmd)
+{ 
+	// Clear RS
+	lat_LCD_DISP_RS = 0;
+
+	// Write command byte
+	LCD_WriteByte(bCmd);
+}
+
+/* ------------------------------------------------------------ */
+/***	LCD_WriteDataByte
+**
+**	Parameters:
+**		unsigned char bData -  the data byte to be written to LCD
+**
+**	Return Value:
+**		
+**
+**	Description:
+**      Writes the specified byte as data. 
+**      It sets the RS and writes the byte to LCD. 
+**      The function uses pin related definitions from config.h file.
+**      This is a low-level function called by LCD write functions, so user should avoid calling it directly.
+**      
+**          
+*/
+void LCD_WriteDataByte(unsigned char bData)
+{
+	// Set RS 
+	lat_LCD_DISP_RS = 1;
+
+	// Write data byte
+	LCD_WriteByte(bData);
 }
 
 
+/* ------------------------------------------------------------ */
+/***	LCD_InitSequence
+**
+**  Synopsis:
+**              LCD_InitSequence(displaySetOptionDisplayOn);//set the display on
+**
+**	Parameters:
+**		unsigned char bDisplaySetOptions -  display options
+**					Possible options (to be OR-ed)
+**						displaySetOptionDisplayOn - display ON
+**						displaySetOptionCursorOn - cursor ON
+**						displaySetBlinkOn - cursor blink ON
+**
+**	Return Value:
+**		
+**
+**	Description:
+**		This function performs the initializing (startup) sequence. 
+**      The LCD is initialized according to the parameter bDisplaySetOptions. 
+**      
+**          
+*/
+void LCD_InitSequence(unsigned char bDisplaySetOptions)
+{
+	//	wait 40 ms
 
-void sw6() { //sound
-    LATBbits.LATB14 ^= 1; //XOR 
+	DelayAprox10Us(40000);
+	// Function Set
+	LCD_WriteCommand(cmdLcdFcnInit);
+	// Wait ~100 us
+	DelayAprox10Us(10);
+	// Function Set
+	LCD_WriteCommand(cmdLcdFcnInit);
+	// Wait ~100 us
+	DelayAprox10Us(10);	// Display Set
+	LCD_DisplaySet(bDisplaySetOptions);
+	// Wait ~100 us
+	DelayAprox10Us(10);
+	// Display Clear
+	LCD_DisplayClear();
+	// Wait 1.52 ms
+	DelayAprox10Us(160);
+    // Entry mode set
+	LCD_WriteCommand(cmdLcdEntryMode);
+    	// Wait 1.52 ms
+	DelayAprox10Us(160);
 }
 
-void sw7() {
-    char mode[8] = {'M', 'o', 'd', 'e', ' ', '7', ':', '\0'};
-    char name[5] = "Exit";
-    clearLCD();
-    printToLCD(mode, 0); //0 for first line
-    printToLCD(name, 1); //0 for first line
-    while (1) {
-        shiftLCD(name);
-    }
+/* ------------------------------------------------------------ */
+/***	LCD_DisplaySet
+**
+**  Synopsis:
+**				LCD_DisplaySet(displaySetOptionDisplayOn | displaySetOptionCursorOn);
+**
+**	Parameters:
+**		unsigned char bDisplaySetOptions -  display options
+**					Possible options (to be OR-ed)
+**						displaySetOptionDisplayOn - display ON
+**						displaySetOptionCursorOn - cursor ON
+**						displaySetBlinkOn - cursor blink ON
+**
+**	Return Value:
+**		
+**
+**	Description:
+**      The LCD is initialized according to the parameter bDisplaySetOptions. 
+**      If one of the above mentioned optios is not OR-ed, 
+**      it means that the OFF action is performed for it.
+**      
+**          
+*/
+void LCD_DisplaySet(unsigned char bDisplaySetOptions)
+{
+	LCD_WriteCommand(cmdLcdCtlInit | bDisplaySetOptions);
 }
 
-void setupLCD() {
-    TRISBbits.TRISB15 = 0; // RB15 (DISP_RS) set as an output
-    ANSELBbits.ANSB15 = 0; // disable analog functionality on RB15 (DISP_RS)
-    TRISDbits.TRISD5 = 0; // RD5 (DISP_RW) set as an output
-    TRISDbits.TRISD4 = 0; // RD4 (DISP_EN) set as an output  
-    TRISE &= 0xff00;
-    ANSELEbits.ANSE2 = 0; //Disable Analog
-    ANSELEbits.ANSE4 = 0; //Disable Analog
-    ANSELEbits.ANSE5 = 0; //Disable Analog
-    ANSELEbits.ANSE6 = 0; //Disable Analog
-    PORTBbits.RB15 = 0; //rs=0
-    PORTDbits.RD5 = 0; //w=0
-    ANSELEbits.ANSE7 = 0;
-    // second line 0xc0
-    // first line 0x80 - 0x8f
-    //char control[] = {0b00111000, 0b00111000, 0b00111000, 0b00001110, 0b00000110, 0b00000001};
-    char control[] = {0x38, 0x38, 0x38, 0xe, 0x6, 0x1};
-
-    // Prepare control functions and send them to the LCD controller and waits for it to finish
-    for (int i = 0; i < sizeof (control); i++) {
-        PORTE = control[i];
-        sendLCDPulse();
-    }
+/* ------------------------------------------------------------ */
+/***	LCD_DisplayClear
+**
+**	Parameters:
+**
+**	Return Value:
+**		
+**	Description:
+**      Clears the display and returns the cursor home (upper left corner, position 0 on row 0). 
+**      
+**          
+*/
+void LCD_DisplayClear()
+{
+	LCD_WriteCommand(cmdLcdClear);
 }
 
-void printToLCD(char str[], int line) {
-    PORTBbits.RB15 = 0; // transferring instruction in order to write further commands later on
-    if (line == 0) { //0x80 - first line, 0xc0 - second line
-        PORTE = 0x80;
-    } else {
-        PORTE = 0xc0;
-    }
-    sendLCDPulse(); // Pulse - Whenever transferring a new command we pulse (=refresh)
-    PORTBbits.RB15 = 1; // RS = 1 transferring data - what we want the LCD to display
-    PORTDbits.RD5 = 0; // Write 
-    for (int i = 0; i < strlen(str); i++) {
-        PORTE = str[i];
-        sendLCDPulse();
-    }
+/* ------------------------------------------------------------ */
+/***	LCD_ReturnHome
+**
+**
+**	Parameters:
+**
+**	Return Value:
+**		
+**	Description:
+**      Returns the cursor home (upper left corner, position 0 on row 0). 
+**      
+**          
+*/
+void LCD_ReturnHome()
+{
+	LCD_WriteCommand(cmdLcdRetHome);
 }
 
-void busy() {
-    int j;
-    for (j = 0; j <= 16000; j++) {
-    }
+/* ------------------------------------------------------------ */
+/***	LCD_DisplayShift
+**	Parameters:
+**		unsigned char fRight - specifies display shift direction:
+**				- 1 in order to shift right
+**				- 0 in order to shift left
+**
+**	Return Value:
+**		
+**	Description:
+**     Shifts the display one position right or left, depending on the fRight parameter.
+**      
+**          
+*/
+void LCD_DisplayShift(unsigned char fRight)
+{
+	unsigned char bCmd = cmdLcdDisplayShift | (fRight ? mskShiftRL: 0);
+	LCD_WriteCommand(bCmd);
 }
 
-void clearLCD() {
-    PORTBbits.RB15 = 0; //DISP_RS -> Low for instruction Transfer
-    PORTDbits.RD5 = 0; //DISP_RW -> Low for write mode
-    PORTE = 0b1; // 10110001(2), 177(10)
-    sendLCDPulse();
+/* ------------------------------------------------------------ */
+/***	LCD_CursorShift
+**
+**	Parameters:
+**		unsigned char fRight
+**				- 1 in order to shift right
+**				- 0 in order to shift left
+**
+**	Return Value:
+**		
+**	Description:
+**     Shifts the cursor one position right or left, depending on the fRight parameter.
+**      
+**          
+*/
+void LCD_CursorShift(unsigned char fRight)
+{
+	unsigned char bCmd = cmdLcdCursorShift | (fRight ? mskShiftRL: 0);
+	LCD_WriteCommand(bCmd);
 }
 
-void sendLCDPulse() {
-    PORTDbits.RD4 = 1; // Pulse
-    PORTDbits.RD4 = 0;
-    busy();
+/* ------------------------------------------------------------ */
+/***	LCD_WriteStringAtPos
+**
+**  Synopsis:
+**      LCD_WriteStringAtPos("Demo", 0, 0);
+**
+**	Parameters:
+**      char *szLn	- string to be written to LCD
+**		int idxLine	- line where the string will be displayed
+**          0 - first line of LCD
+**          1 - second line of LCD
+**		unsigned char idxPos - the starting position of the string within the line. 
+**                                  The value must be between:
+**                                      0 - first position from left
+**                                      39 - last position for DDRAM for one line
+**                                  
+**
+**	Return Value:
+**		
+**	Description:
+**		Displays the specified string at the specified position on the specified line. 
+**		It sets the corresponding write position and then writes data bytes when the device is ready.
+**      Strings longer than 40 characters are trimmed. 
+**      It is possible that not all the characters will be visualized, as the display only visualizes 16 characters for one line.
+**      
+**          
+*/
+void LCD_WriteStringAtPos(char *szLn, unsigned char idxLine, unsigned char idxPos)
+{
+	// crop string to 0x27 chars
+	int len = strlen(szLn);
+	if(len > 0x27)
+	{
+        szLn[0x27] = 0; // trim the string so it contains 40 characters 
+		len = 0x27;
+	}
+
+	// Set write position
+	unsigned char bAddrOffset = (idxLine == 0 ? 0: 0x40) + idxPos;
+	LCD_SetWriteDdramPosition(bAddrOffset);
+
+	unsigned char bIdx = 0;
+	while(bIdx < len)
+	{
+		LCD_WriteDataByte(szLn[bIdx]);
+		bIdx++;
+	}
 }
 
-void writeMode(char mode[], char name[], int index, int value) { // index->boolean array index, value -> 1 normal/ 2 reverse
-    //LCD
-    clearLCD();
-    printToLCD(mode, 0); //0 for first line
-    printToLCD(name, 1); //0 for first line
-    boolean[index] = value;
-    //LCD
+/* ------------------------------------------------------------ */
+/***	LCD_SetWriteCgramPosition
+**
+**
+**	Parameters:
+**      unsigned char bAdr	- the write location. The position in CGRAM where the next data write operations will put bytes.
+**
+**	Return Value:
+**		
+**	Description:
+**		Sets the DDRAM write position. This is the location where the next data write operation will be performed.
+**		Writing to a location auto-increments the write location.
+**      This is a low-level function called by LCD_WriteBytesAtPosCgram(), so user should avoid calling it directly.
+ **      
+**          
+*/
+void LCD_SetWriteCgramPosition(unsigned char bAdr)
+{
+	unsigned char bCmd = cmdLcdSetCgramPos | bAdr;
+	LCD_WriteCommand(bCmd);
 }
 
-void shiftLCD(char name[]) {
-    if (shiftCounter + strlen(name) >= 0x10) {
-        shiftCounterStatus = 1;
-    }
-    if (shiftCounterStatus) {
-        shiftLeftLCD(name, shiftCounter);
-        if (shiftCounter)
-            shiftCounter--;
-        else
-            shiftCounterStatus = 0;
-    } else {
-        shiftRightLCD(name, shiftCounter);
-        shiftCounter++;
-    }
+/* ------------------------------------------------------------ */
+/***	LCD_WriteBytesAtPosCgram
+**
+**  Synopsis:
+**      LCD_WriteBytesAtPosCgram(userDefArrow, 8, posCgramChar0);
+**
+**	Parameters:
+**		unsigned char *pBytes	- pointer to the string of bytes
+**		unsigned char len		- the number of bytes to be written
+**		unsigned char bAdr		- the position in CGRAM where bytes will be written
+**
+**	Return Value:
+**		
+**	Description:
+**		Writes the specified number of bytes to CGRAM starting at the specified position. 
+**      This allows user characters to be defined.
+**		It sets the corresponding write position and then writes data bytes when the device is ready.
+**      
+**          
+*/
+void LCD_WriteBytesAtPosCgram(unsigned char *pBytes, unsigned char len, unsigned char bAdr)
+{
+	// Set write position
+	LCD_SetWriteCgramPosition(bAdr);
+
+	// Write the string of bytes that define the character to CGRAM
+	unsigned char idx = 0;
+	while(idx < len)
+	{
+		LCD_WriteDataByte(pBytes[idx]);
+		idx++;
+	}
 }
 
-void shiftRightLCD(char str[], int index) {
-    PORTBbits.RB15 = 0; // transferring instruction in order to write further commands later on
-    PORTE = 0xc0 + index; //first char of the last word
-    sendLCDPulse(); // Pulse - Whenever transferring a new command we pulse (=refresh)
+/* *****************************************************************************
+ End of File
+ */
 
-    PORTBbits.RB15 = 1; // RS = 1 transferring data - what we want the LCD to display
-    PORTDbits.RD5 = 0; // Write 
-    for (int j = 0; j <= strlen(str); j++) {
-        PORTE = ' ';
-        sendLCDPulse();
-    }
-
-    PORTBbits.RB15 = 0; // transferring instruction in order to write further commands later on
-    PORTE = 0xc0 + index + 1; //first char of the last word
-    sendLCDPulse(); // Pulse - Whenever transferring a new command we pulse (=refresh)
-    PORTBbits.RB15 = 1; // RS = 1 transferring data - what we want the LCD to display
-    for (int i = 0; i < strlen(str); i++) { //write the word at index +1
-        PORTE = str[i];
-        sendLCDPulse();
-    }
-}
-
-void shiftLeftLCD(char str[], int index) {
-    PORTBbits.RB15 = 0; // transferring instruction in order to write further commands later on
-    PORTE = 0xc0 + index; //first char of the last word
-    sendLCDPulse(); // Pulse - Whenever transferring a new command we pulse (=refresh)
-
-    PORTBbits.RB15 = 1; // RS = 1 transferring data - what we want the LCD to display
-    PORTDbits.RD5 = 0; // Write 
-    for (int j = 0; j <= strlen(str); j++) { //clear the last word
-        PORTE = ' ';
-        sendLCDPulse();
-    }
-
-    PORTBbits.RB15 = 0;
-    PORTE = 0xc0 + index;
-    sendLCDPulse();
-    PORTBbits.RB15 = 1;
-
-    for (int i = 0; i < strlen(str); i++) { // write the word at index
-        PORTE = str[i];
-        sendLCDPulse();
-    }
-}
-
-void resetShifts() {
-    shiftCounter = 0;
-    shiftCounter = 0;
-}

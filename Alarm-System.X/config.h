@@ -1,8 +1,6 @@
 /* 
  * File:   config.h
  * Author: ROFatuC
- * 
- * link from github official repo: https://github.com/Digilent/Basys-MX3-library/blob/master/Demos/AUDIODemo.X/config.h
  *
  * Created on December 15, 2015, 11:09 AM
  */

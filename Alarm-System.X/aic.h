@@ -5,21 +5,23 @@
     Digilent
 
   @File Name
-    adc.h
+    aic.h
 
   @Description
         This file groups the declarations of the functions that implement
-        the ADC module (defined in adc.c). This module is used by AIC and MIC libraries.
+        the AIC library (defined in aic.c). 
         Include the file in the project when the AIC and MIC libraries are needed.
  */
 /* ************************************************************************** */
 
-#ifndef _ADC_H    /* Guard against multiple inclusion */
-#define _ADC_H
+#ifndef _AIC_H    /* Guard against multiple inclusion */
+#define _AIC_H
 
+void AIC_Init();
+unsigned int AIC_Val();
+//private functions:
+void AIC_ConfigurePins();
 
-void ADC_Init();
-unsigned int ADC_AnalogRead(unsigned char analogPIN);
 //#ifdef __cplusplus
 //extern "C" {
 //#endif
@@ -38,7 +40,7 @@ unsigned int ADC_AnalogRead(unsigned char analogPIN);
 //#ifdef __cplusplus
 //}
 //#endif
-#endif /* _ADC_H */
+#endif /* _AIC_H */
 
 /* *****************************************************************************
  End of File

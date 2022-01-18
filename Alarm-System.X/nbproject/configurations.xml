@@ -9,6 +9,7 @@
       <itemPath>ADC.h</itemPath>
       <itemPath>config.h</itemPath>
       <itemPath>btn.h</itemPath>
+      <itemPath>aic_2.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -22,6 +23,7 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>ADC.c</itemPath>
       <itemPath>btn.c</itemPath>
+      <itemPath>aic.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

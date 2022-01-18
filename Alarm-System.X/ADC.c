@@ -14,7 +14,6 @@
         for reading any analog input pin.
         Include adc.c in the project when ADC is used standalone, or when the AIC and MIC libraries are needed.
  
- @link: https://github.com/Digilent/Basys-MX3-library/blob/master/Demos/AUDIODemo.X/adc.c
   @Author
     Cristian Fatu 
     cristian.fatu@digilent.ro 
@@ -27,8 +26,8 @@
 /* ************************************************************************** */
 #include <xc.h>
 #include <sys/attribs.h>
-//#include "config.h"
-#include "ADC.h"
+#include "config.h"
+#include "adc.h"
 
 /* ************************************************************************** */
 /***	ADC_Init()
